@@ -68,19 +68,19 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _app3 = __webpack_require__(274);
+	var _app3 = __webpack_require__(272);
 	
 	var _app4 = _interopRequireDefault(_app3);
 	
-	var _login = __webpack_require__(275);
+	var _login = __webpack_require__(273);
 	
 	var _login2 = _interopRequireDefault(_login);
 	
-	var _panel = __webpack_require__(276);
+	var _panel = __webpack_require__(274);
 	
 	var _panel2 = _interopRequireDefault(_panel);
 	
-	var _index = __webpack_require__(272);
+	var _index = __webpack_require__(275);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -29779,66 +29779,6 @@
 
 	'use strict';
 	
-	var _reactRouterRedux = __webpack_require__(264);
-	
-	var _redux = __webpack_require__(182);
-	
-	var _products = __webpack_require__(273);
-	
-	var Reducers = (0, _redux.combineReducers)({
-		productsReducer: _products.productsReducer,
-		routing: _reactRouterRedux.routerReducer
-	});
-	
-	module.exports = Reducers;
-
-/***/ },
-/* 273 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	var productsReducer = function productsReducer() {
-		var state = arguments.length <= 0 || arguments[0] === undefined ? { products: [], loading: false } : arguments[0];
-		var action = arguments[1];
-	
-	
-		if (action.type === 'LOADING_PRODUCTS') {
-			return { loading: true, products: [] };
-		} else if (action.type === 'LOADED_PRODUCTS') {
-			return { loading: false, products: action.posts };
-		} else {
-			return { loading: false, products: state.products };
-		}
-	};
-	
-	var shoppingCartReducer = function shoppingCartReducer() {
-		var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-		var action = arguments[1];
-	
-		return state;
-	};
-	var orderReducer = function orderReducer() {
-		var state = arguments.length <= 0 || arguments[0] === undefined ? { products: [], loaded: false } : arguments[0];
-		var action = arguments[1];
-	
-		return state;
-	};
-	
-	var ProductReducers = {
-		productsReducer: productsReducer,
-		shoppingCartReducer: shoppingCartReducer,
-		orderReducer: orderReducer
-	};
-	
-	module.exports = ProductReducers;
-
-/***/ },
-/* 274 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -29862,7 +29802,7 @@
 	module.exports = AdminApp;
 
 /***/ },
-/* 275 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29924,7 +29864,102 @@
 	module.exports = LoginAdmin;
 
 /***/ },
+/* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(35);
+	
+	var _reactRedux = __webpack_require__(175);
+	
+	var _addProduct = __webpack_require__(277);
+	
+	var _addProduct2 = _interopRequireDefault(_addProduct);
+	
+	var _productList = __webpack_require__(278);
+	
+	var _productList2 = _interopRequireDefault(_productList);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var PanelAdmin = function PanelAdmin() {
+		return _react2.default.createElement(
+			'div',
+			null,
+			_react2.default.createElement(_addProduct2.default, null),
+			_react2.default.createElement(_productList2.default, null)
+		);
+	};
+	
+	module.exports = PanelAdmin;
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _reactRouterRedux = __webpack_require__(264);
+	
+	var _redux = __webpack_require__(182);
+	
+	var _products = __webpack_require__(276);
+	
+	var Reducers = (0, _redux.combineReducers)({
+		productsReducer: _products.productsReducer,
+		routing: _reactRouterRedux.routerReducer
+	});
+	
+	module.exports = Reducers;
+
+/***/ },
 /* 276 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	var productsReducer = function productsReducer() {
+		var state = arguments.length <= 0 || arguments[0] === undefined ? { products: [], loading: false } : arguments[0];
+		var action = arguments[1];
+	
+	
+		if (action.type === 'LOADING_PRODUCTS') {
+			return { loading: true, products: [] };
+		} else if (action.type === 'LOADED_PRODUCTS') {
+			return { loading: false, products: action.posts };
+		} else {
+			return { loading: false, products: state.products };
+		}
+	};
+	
+	var shoppingCartReducer = function shoppingCartReducer() {
+		var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+		var action = arguments[1];
+	
+		return state;
+	};
+	var orderReducer = function orderReducer() {
+		var state = arguments.length <= 0 || arguments[0] === undefined ? { products: [], loaded: false } : arguments[0];
+		var action = arguments[1];
+	
+		return state;
+	};
+	
+	var ProductReducers = {
+		productsReducer: productsReducer,
+		shoppingCartReducer: shoppingCartReducer,
+		orderReducer: orderReducer
+	};
+	
+	module.exports = ProductReducers;
+
+/***/ },
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29939,15 +29974,117 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var PanelAdmin = function PanelAdmin() {
+	var AddProductForm = function AddProductForm() {
 		return _react2.default.createElement(
 			'div',
 			null,
-			'Panel'
+			_react2.default.createElement(
+				'form',
+				{ className: 'form-horizontal' },
+				_react2.default.createElement(
+					'div',
+					{ className: 'form-group' },
+					_react2.default.createElement(
+						'label',
+						{ className: 'col-sm-2 control-label' },
+						'Product Name'
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-sm-10' },
+						_react2.default.createElement('input', { type: 'text', className: 'form-control product-name', id: 'product-name', placeholder: 'Product name' })
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'form-group' },
+					_react2.default.createElement(
+						'label',
+						{ className: 'col-sm-2 control-label' },
+						'Description'
+					),
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-sm-10' },
+						_react2.default.createElement('textarea', { className: 'form-control description', id: 'description', placeholder: 'Description for product' })
+					)
+				),
+				_react2.default.createElement(
+					'div',
+					{ className: 'form-group' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'col-sm-offset-2 col-sm-10' },
+						_react2.default.createElement(
+							'button',
+							{ type: 'submit', className: 'btn btn-primary btn-block' },
+							'Crear'
+						)
+					)
+				)
+			)
 		);
 	};
 	
-	module.exports = PanelAdmin;
+	module.exports = AddProductForm;
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(35);
+	
+	var _reactRedux = __webpack_require__(175);
+	
+	var _itemList = __webpack_require__(279);
+	
+	var _itemList2 = _interopRequireDefault(_itemList);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var ProductsList = function ProductsList() {
+		return _react2.default.createElement(
+			'div',
+			null,
+			_react2.default.createElement(_itemList2.default, null),
+			_react2.default.createElement(_itemList2.default, null),
+			_react2.default.createElement(_itemList2.default, null)
+		);
+	};
+	
+	module.exports = ProductsList;
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(35);
+	
+	var _reactRedux = __webpack_require__(175);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var ItemList = function ItemList() {
+		return _react2.default.createElement(
+			'div',
+			null,
+			'item'
+		);
+	};
+	
+	module.exports = ItemList;
 
 /***/ }
 /******/ ]);
