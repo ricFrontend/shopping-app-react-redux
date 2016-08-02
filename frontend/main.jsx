@@ -8,6 +8,9 @@ import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
 import request from 'browser-request'
 import AppView from './views/app.jsx'
+import AdminApp from './views/admin/app.jsx'
+import LoginAdmin from './views/admin/login.jsx'
+import PanelAdmin from './views/admin/panel.jsx'
 import Reducers from './reducers/index.jsx'
 
 
@@ -47,6 +50,10 @@ render(
 	<Provider store={store}>
 		<Router history={history}>
 			<Route path="/" component={AppView}></Route>
+			<Route path="/admin">
+				<Route path="/admin/login" component={LoginAdmin}></Route>
+				<Route path="/admin/panel" component={PanelAdmin}></Route>
+			</Route>
 		</Router>
 	</Provider>,
 	document.getElementById('root')
